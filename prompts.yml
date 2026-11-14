@@ -1,0 +1,39 @@
+# Agent Prompt Picker v8 - simple YAML subset, no extra libraries.
+# Category and Command are shown in the left list.
+# Details (Japanese) is shown above Content in the right preview.
+# Display is sorted by Category, then Command (case-insensitive).
+# Search includes all four fields. Spaces: 2 for entries, 4 for keys, 6+ for content.
+matches:
+  - category: "Agent"
+    command: "Review Changes"
+    details: "変更差分をレビュー"
+    content: |
+      現在の変更差分をレビューしてください。
+      - バグ・回帰リスクを優先して指摘する
+      - 不要な抽象化や複雑化がないか確認する
+      - 問題がある場合、ファイル名・箇所・理由を示す
+      - コードは修正せず、レビュー結果だけを報告する
+
+  - category: "Debug"
+    command: "Investigate Issue"
+    details: "不具合の原因を調査"
+    content: |
+      この問題の原因を調査してください。
+      推測だけで修正せず、ログ・再現手順・関連コードから原因を特定してください。
+      原因、根拠、推奨修正案を整理して報告してください。
+
+  - category: "Test"
+    command: "Add Tests"
+    details: "変更箇所にテストを追加"
+    content: |
+      今回の変更に対応するテストを追加してください。
+      既存のテスト設計と命名規則に従い、正常系と主要な異常系を確認してください。
+      テスト実行結果と、未検証の範囲を報告してください。
+
+  - category: "Agent"
+    command: "Limit Change Scope"
+    details: "変更範囲を限定"
+    content: |
+      目的達成に必要な最小限の変更にしてください。
+      関係のないリファクタリングや依存関係の追加は避けてください。
+      既存の設計意図を尊重し、変更理由を説明してください。
